@@ -2,7 +2,7 @@ import matplotlib.image as image
 from PIL import Image
 import random
 
-img_name = "dog.png"
+img_name = "dog.png" # name of the image
 img = Image.open(img_name)
 thresh = 200
 fn = lambda x: 255 if x > thresh else 0
@@ -47,7 +47,7 @@ def generate_final_img(img_lst):
     return img_final
 
 
-img_lst = generate_img_lst(5, 0.15)
+img_lst = generate_img_lst(5, 0.15) # generate 5 images with 15% error
 print(len(img_lst))
 for i, img in enumerate(img_lst):  # save the images
     image.imsave(f"{img_name.split('.')[0]}_bw_error_{i}.png", img, cmap="gray")
